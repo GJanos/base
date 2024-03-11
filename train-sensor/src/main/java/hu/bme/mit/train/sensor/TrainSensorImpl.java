@@ -40,4 +40,3 @@ public class TrainSensorImpl implements TrainSensor {
 		return tachoGraphTable.size();
 	}
 }
-sdf
