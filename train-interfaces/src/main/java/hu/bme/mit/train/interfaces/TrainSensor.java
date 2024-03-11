@@ -6,4 +6,7 @@ public interface TrainSensor {
 
 	void overrideSpeedLimit(int speedLimit);
 
+	void ModifyTachoGraph(Long time, Integer JoystickPosition, Integer ReferenceSpeed);
+
+	int getSize();
 }

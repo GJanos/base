@@ -26,6 +26,13 @@ public class TrainSystemTest {
 	}
 
 	@Test
+	public void TachoGraphTest() {
+		Assert.assertEquals(0, sensor.getSize());
+		sensor.ModifyTachoGraph(System.currentTimeMillis(), user.getJoystickPosition(), controller.getReferenceSpeed());
+		Assert.assertEquals(1, sensor.getSize());
+	}
+
+	@Test
 	public void emergencyBreakTest(){
 		user.emergencyBreak();
 		Assert.assertEquals(0, controller.getReferenceSpeed());
@@ -55,6 +62,4 @@ public class TrainSystemTest {
 		controller.followSpeed();
 		Assert.assertEquals(0, controller.getReferenceSpeed());
 	}
-
-	
 }
