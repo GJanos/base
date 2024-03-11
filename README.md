@@ -2,7 +2,7 @@
 
 This is a sample application for the verification laboratory.
 
-## Getting started Boldog Karácsonyt!
+## Getting started Boldog Újévet Boldog Karácsonyt!
 
 * The application is implemented in Java.
 * The project can be built using [Gradle](https://gradle.org/) or [Maven](https://maven.apache.org/) (currently **Maven** is preferred).
