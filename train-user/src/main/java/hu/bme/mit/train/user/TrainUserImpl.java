@@ -19,7 +19,7 @@ public class TrainUserImpl implements TrainUser {
 			@Override  
 			public void run() {  
 				overrideJoystickPosition(getJoystickPosition());
-			};
+			}
 		};
 		this.timer.scheduleAtFixedRate(this.timerTask,1000,1000); 
 	}
