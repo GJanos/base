@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.mockito.Mockito.*;
 
 import hu.bme.mit.train.interfaces.TrainController;
-import hu.bme.mit.train.TrainSensorImpl;
+import hu.bme.mit.train.sensor.TrainSensorImpl;
 import hu.bme.mit.train.interfaces.TrainUser;
 
 public class TrainSensorTest {
