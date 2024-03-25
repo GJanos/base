@@ -21,7 +21,7 @@ public class TrainUserImpl implements TrainUser {
 				overrideJoystickPosition(getJoystickPosition());
 			};
 		};
-		t.scheduleAtFixedRate(tt,1000,1000); 
+		this.timer.scheduleAtFixedRate(this.timerTask,1000,1000); 
 	}
 
 	@Override
