@@ -5,24 +5,24 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 
-import hu.bme.mit.train.interfaces.TrainController;
-import hu.bme.mit.train.interfaces.TrainSensor;
-import hu.bme.mit.train.interfaces.TrainUser;
+import hu.bme.mit.train.interfaces.TrainControllerImpl;
+import hu.bme.mit.train.interfaces.TrainSensorImpl;
+import hu.bme.mit.train.interfaces.TrainUserImpl;
 
 public class TrainSensorTest {
 
     
-    TrainUser mockTrainUser;
+    TrainUserImpl mockTrainUser;
     
-    TrainController mockController;
+    TrainControllerImpl mockController;
 
-    TrainSensor trainSensor;
+    TrainSensorImpl trainSensor;
 
 
     @Before
     public void setUp() {
-        mockTrainUser = mock(TrainUser.class);
-        mockController = mock(TrainController.class);
+        mockTrainUser = mock(TrainUserImpl.class);
+        mockController = mock(TrainControllerImpl.class);
         trainSensor = new TrainSensor(mockController, mockTrainUser);
     }
 
