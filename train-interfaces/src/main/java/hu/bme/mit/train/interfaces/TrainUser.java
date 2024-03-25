@@ -12,7 +12,7 @@ public interface TrainUser {
 
 	boolean getAlarmState();
 
-	void setAlarmState();
+	void setAlarmState(boolean alarmState);
 
 	
 
