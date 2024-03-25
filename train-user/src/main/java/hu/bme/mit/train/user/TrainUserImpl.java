@@ -9,13 +9,13 @@ public class TrainUserImpl implements TrainUser {
 
 	private TrainController controller;
 	private int joystickPosition;
-	private Timer t;
-	private TimerTask tt;
+	private Timer timer;
+	private TimerTask timerTask;
 
 	public TrainUserImpl(TrainController controller) {
 		this.controller = controller;
-		this.t = new Timer();
-		tt = new TimerTask() {  
+		this.timer = new Timer();
+		this.timerTask = new TimerTask() {  
 			@Override  
 			public void run() {  
 				overrideJoystickPosition(getJoystickPosition());
