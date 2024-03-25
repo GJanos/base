@@ -27,8 +27,15 @@ public class TrainSensorTest {
     }
 
     @Test
-    public void TestOverBoundSpeedLimitFromReferenceSpeed() {
-        
+    public void TestOverBoundSpeedLimit() {
+        trainSensor.overrideSpeedLimit(600);
+        verify(mockTrainUser, times(1)).setAlarmState(true);
+    }
+
+    @Test
+    public void TestUnderBoundSpeedLimit() {
+        trainSensor.overrideSpeedLimit(-10);
+        verify(mockTrainUser, times(1)).setAlarmState(true);
     }
 
 
