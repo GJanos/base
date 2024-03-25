@@ -6,12 +6,20 @@ import hu.bme.mit.train.interfaces.TrainSensor;
 import hu.bme.mit.train.interfaces.TrainUser;
 import hu.bme.mit.train.sensor.TrainSensorImpl;
 import hu.bme.mit.train.user.TrainUserImpl;
+import java.lang.Thread;
+import java.lang.InterruptedException;
 
 public class TrainSystem extends Thread{
 
 	private TrainController controller = new TrainControllerImpl();
 	private TrainUser user = new TrainUserImpl(controller);
 	private TrainSensor sensor = new TrainSensorImpl(controller, user);
+
+	public TrainSystem() {
+		
+			start();
+		
+	}
 
 	public TrainController getController() {
 		return controller;
@@ -28,10 +36,15 @@ public class TrainSystem extends Thread{
 	@Override
     public void run()
     {
-        while(true) {
+		try {
+			while(true) {
 			user.overrideJoystickPosition(user.getJoystickPosition());
         	Thread.sleep(2000);
         }
+		} catch (InterruptedException e) {
+			// TODO: handle exception
+		}
+        
     }
 	
 
