@@ -7,13 +7,18 @@ import static org.mockito.Mockito.*;
 
 public class TrainSensorTest {
 
+    @Mock
+    private TrainUser mockTrainUser;
+    @Mock
+    private TrainController mockController;
+
     @Before
-    public void before() {
-        // TODO Add initializations
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    public void ThisIsAnExampleTestStub() {
-        // TODO Delete this and add test cases based on the issues
+    public void TestOverBoundSpeedLimitFromReferenceSpeed() {
+        
     }
 }
