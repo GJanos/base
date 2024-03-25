@@ -30,4 +30,19 @@ public class TrainSensorTest {
     public void TestOverBoundSpeedLimitFromReferenceSpeed() {
         
     }
+
+
+    @Test
+    public void TestSpeedLimitLowerThanHalfOfReferenceSpeed(){
+        when(mockController.getReferenceSpeed()).thenReturn(200);
+        trainSensor.overrideSpeedLimit(50);
+        verify(mockTrainUser, times(1)).setAlarmState(true);
+    }
+
+    @Test
+    public void TestSpeedLimitHigherThanHalfOfReferenceSpeed(){
+        when(mockController.getReferenceSpeed()).thenReturn(75);
+        trainSensor.overrideSpeedLimit(50);
+        verify(mockTrainUser, times(1)).setAlarmState(false);
+    }
 }
